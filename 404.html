@@ -1,114 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Redlli</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            margin: 1px;
-            padding: 0;
-            padding-top: 75px; /* Adjust this value based on the height of your header */
-            background-color:#020202;
-            
-        }
-        header {
-            font-size: 30px;
-            background-color: black;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        #Back {
-            padding: 1px;
-            margin: auto;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        p {
-            //background-color: #050505;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        footer {
-            background-color: #050505;
-            color: #fff;
-            text-align: center;
-            padding: 0px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        @media (min-width: 600px) {
-            p {
-                font-size: 25px;
-            }
-        }
-        @media (min-width: 768px) {
-            p {
-                font-size: 30px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Random.html">Random</a></li>
-                <li><a href="About.html">About</a></li>
-                
-            </ul>
-        </nav>
-    </header>
-    <section id="Back">
-	
-        <p style="font-size: 30px">Page not found </p>
-    </section>
-    <footer style="background-color: #050505;">
-       <audio id="bgm" loop>
-       <source src="BGM.wav">
-    	Your browser does not support the audio element.
-       </audio>
-        <p style="font-size: 20px;">--- A Redlli Project ---</p>
-        <p style="font-size: 15px;">©2024</p>
-        
-    </footer>
-     <script>
-        document.addEventListener('click', function() {
-            var audioElement = document.getElementById('bgm');
-            audioElement.play();
-        });
+---
+permalink: /404.html
+layout: default
+---
 
-        document.addEventListener('keydown', function(event) {
-            if (event.code === 'Space') {
-                var audioElement = document.getElementById('bgm');
-                audioElement.pause();
-            }
-        });
-    </script>
-</body>
-</html>
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
 
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
