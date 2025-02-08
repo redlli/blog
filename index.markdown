@@ -1,11 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: def
 permalink: /
 ---
 
-THIS IS HOME PAGE
-
-IMAGE
+<div align="center">
+  <img width="100%" height="auto" height="auto" src="https://img.playbook.com/-fO_M3x_-xvufUWDAYaAky8D2wHclWzbnVvwxdBCI-I/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzk4MzZjN2Nj/LWE3MTEtNDRjZC04/NGE2LWFmYWMzOWQ0/YWE5MA" alt="redlii cover" />
+  </div>
