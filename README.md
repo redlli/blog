@@ -1,6 +1,6 @@
 ---
 layout: def
-title: About
+title: Readme
 permalink: /readme
 ---
 <h1 align="left">License</h1>
