@@ -12,4 +12,5 @@ github_username:  redlli
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 

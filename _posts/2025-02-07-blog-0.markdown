@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "First post!"
+date:   2025-02-07 
+categories: random
+permalink: test1
+cover: "https://img.playbook.com/-fO_M3x_-xvufUWDAYaAky8D2wHclWzbnVvwxdBCI-I/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzk4MzZjN2Nj/LWE3MTEtNDRjZC04/NGE2LWFmYWMzOWQ0/YWE5MA"
+---
+<h1>{{ page.title }}</h1>
+<h2>{{ page.title }}</h2>
+<h3>{{ page.date | date: "%B %d, %Y" }}</h3>
+<img src="{{ page.cover }}" alt="{{ alt }}" style = "width: 99%;">
+
+  
+<p>i love stupid girls, consectetur adipiscing elit. Proin euismod, nisi quis fermentum lacinia, lacus eros condimentum urna, eget varius sapien leo a est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras euismod, libero vel euismod tincidunt, enim nisi facilisis lectus, nec scelerisque justo nulla a nunc. Vivamus at justo et justo sollicitudin aliquam. Sed pharetra orci vitae elit luctus, sed vestibulum tortor pharetra. Praesent non nunc ac arcu gravida dictum.
+
+Curabitur sit amet magna tincidunt, faucibus orci ac, facilisis ligula. Aenean id velit urna. Aliquam erat volutpat. Aliquam erat volutpat. Integer dictum libero ac nunc fermentum, nec elementum urna vestibulum. In hac habitasse platea dictumst. In ornare, lorem ac suscipit malesuada, nunc arcu efficitur ligula, in feugiat risus purus sit amet nisi.
+
+Nam consequat nulla ut odio vehicula, eget tincidunt dui fermentum. Fusce venenatis dui ut leo lobortis pharetra. Sed quis sapien nec enim tincidunt accumsan. Ut rutrum urna sit amet purus commodo malesuada. Vestibulum id magna ut ipsum condimentum fermentum. Pellentesque fringilla felis sapien, ut interdum lacus tempor ut. Duis nec augue nec libero finibus bibendum vel nec est. Ut vehicula lacinia libero eget pretium. Suspendisse potenti.
+</p>
