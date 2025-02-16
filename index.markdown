@@ -3,7 +3,45 @@ title: Redlii
 layout: def
 permalink: /
 ---
+<style>
+    .dek {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        background-color: lightgray;
+        padding: 10px;
+    }
+    .card {
+        padding: 10px;
+        text-align: center;
+        background-color: gray;
+        color: white;
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s ease;
+    }
+    .card:hover {
+        background-color: red;
+    }
+    .card a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+</style>
 
-<div align="center">
-  <img width="100%" height="auto" height="auto" src="https://img.playbook.com/-fO_M3x_-xvufUWDAYaAky8D2wHclWzbnVvwxdBCI-I/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzk4MzZjN2Nj/LWE3MTEtNDRjZC04/NGE2LWFmYWMzOWQ0/YWE5MA" alt="redlii cover" />
-  </div>
+<div class="dek">
+    {% for post in site.posts %}
+    <div class="card">
+        <a href="{{ post.url }}">
+            {% if post.cover %}
+            <img src="{{ post.cover }}" alt="{{ post.title }}" style="width: 99%; margin: 1%;">
+            {% endif %}
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.date | date: "%B %d, %Y" }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+

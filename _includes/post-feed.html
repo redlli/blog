@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {% for post in site.posts %}
+      {% if post.tag != "list" %}
+        {
+          "title": "{{ post.title | escape }}",
+          "snippet": "{{ post.content | strip_html | truncatewords: 25 | escape }}",
+          "url": "{{ post.url }}"
+        }{% if forloop.last == false %},{% endif %}
+      {% endif %}
+    {% endfor %}
+  ]
+}
+

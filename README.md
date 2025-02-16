@@ -3,6 +3,15 @@ layout: def
 title: Readme
 permalink: /readme
 ---
+<style>
+	.linkhai {
+	color:blue;
+	}
+	.linkhai:hover {
+	color:orange;
+	font-size:30px;
+	}
+</style>
 <h1 align="left">License</h1>
 
 
@@ -15,7 +24,7 @@ permalink: /readme
 <h2 align="left">Commercial Use</h2>
 
 
-<h3 align="left">1. Attribution: For commercial use, you must give appropriate credit to redlii.com, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.<br><br>2. Royalties: If you use this content for commercial purposes and generate revenue from its use (e.g., selling products or services that incorporate this content), you must pay royalties to redlii.com. Please contact redlii@redlii.com(mailto:redlii@redlii.com) to arrange the royalty terms.</h3>
+<h3 align="left">1. Attribution: For commercial use, you must give appropriate credit to redlii.com, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.<br><br>2. Royalties: If you use this content for commercial purposes and generate revenue from its use (e.g., selling products or services that incorporate this content), you must pay royalties to redlii.com. Please contact <a class="linkhai" href="mailto:redlii@redlii.com">redlii@redlii.com</a> to arrange the royalty terms.</h3>
 
 
 <div align="center">
@@ -23,4 +32,3 @@ permalink: /readme
 </div>
 
 
-<p align="center">--- A Redlii Project ---</p>
