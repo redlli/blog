@@ -75,3 +75,5 @@ document.getElementById('support-us').addEventListener('click', function() {
 
             searchInput.addEventListener('keyup', updateSearchResults);
         });
+        
+

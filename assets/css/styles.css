@@ -1,23 +1,29 @@
 body {
     display: flex;
     flex-direction: column;
-    margin-top: 0;
+    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #020202;
-    height: 100vh;
     color: white;
-    background-repeat: no-repeat;
-    background-position: center;
+    min-height: 100vh; /* Ensure body takes full viewport height */
 }
 
 .main-content {
-    display: flex;
-    flex-grow: 1;
-    margin: 17px 25%; /* Fixed margin of 25% on both sides */
+    flex-grow: 1; /* Allows content to expand to fill available space */
+    padding: 20px; /* Consistent padding */
+    margin: 20px; /* Margin around content */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .main-content {
+        margin: 10px; /* Reduced margin on smaller screens */
+        padding: 15px;
+    }
 }
 
 .sidebar {
-    width: 100px;
+    width: 60px; /* Initial width */
     background-color: black;
     height: 100%;
     overflow: hidden;
@@ -25,16 +31,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: fixed; /* Fixes the sidebar in place */
+    justify-content: flex-start; /* Align items to the top */
+    position: fixed;
     top: 0;
     left: 0;
     border-right: 1px solid white;
+    z-index: 2; /* Ensure sidebar is above other content */
 }
 
+
 .sidebar:hover {
-    width: 20%;
-    border-right: 1px solid white;
+    width: 200px; /* Expanded width */
 }
 
 .sidebar a {
@@ -42,15 +49,14 @@ body {
     align-items: center;
     color: white;
     text-decoration: none;
-    padding: 15px;
-    text-align: center;
-    justify-content: center;
-    position: relative;
+    padding: 10px; /* Reduced padding */
+    width: 100%; /* Ensure links take full sidebar width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .sidebar a i {
     margin-right: 10px;
-    font-size: 1.5em; /* Increase the size here */
+    font-size: 1.2em;
 }
 
 .sidebar a span {
@@ -61,30 +67,34 @@ body {
     display: inline;
 }
 
-.sidebar-f i {
+.sidebar-f {
+    display: none; /* Initially hidden */
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
     width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease, color 0.3s ease;
+    justify-content: space-around; /* Distribute icons evenly */
 }
 
+.sidebar:hover .sidebar-f {
+    display: flex;
+}
+
+.sidebar-f i {
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 5px; /* Add some padding around icons */
+    cursor: pointer; /* Indicate interactivity */
+}
 
 .sidebar-f i:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    
+    border-radius: 5px; /* Rounded corners on hover */
 }
 
-.sidebar a::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: transparent;
-}
-
-.sidebar a:hover::after {
-    background-color: rgba(255, 255, 255, 0.1); /* onhover color */
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .content {
@@ -93,28 +103,38 @@ body {
 }
 
 .progress-bar {
-    width: 15%;
+    width: 40px; /* Reduced width */
     background-color: #020202;
-    border-left: 1px solid white; /* Add this line to set the left border */
+    border-left: 1px solid white;
     height: 100%;
-    position: fixed; /* Fixes the progress bar in place */
+    position: fixed;
     top: 0;
     right: 0;
-    display: flex; /* Add this line to make it a flex container */
-    flex-direction: column; /* Add this line to stack children vertically */
-    align-items: center; /* Add this line to center children horizontally */
-    padding: 10px; /* Add some padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    z-index: 2; /* Ensure progress bar is above other content */
+}
+
+/* Media query for smaller screens - Hide progress bar */
+@media (max-width: 768px) {
+    .progress-bar {
+        display: none;
+    }
 }
 
 .progress-bar-header {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
+
+
 
 hr {
     border: none;
     border-top: 1px solid white;
-    margin: 0px 0;
+    margin: 20px 0; /* Add margin above and below hr */
 }
 
 footer {
@@ -122,21 +142,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-}
-
-.sidebar-f {
-    display: none;
-    font-size: 1.5em; /* Increase the size here */
-    color: white;
-    text-align: center;
-    position: absolute;
-    bottom: 10px; /* Position it at the bottom */
-    width: 100%; /* Make it take up the full width */
-}
-
-.sidebar:hover .sidebar-f {
-    display: flex;
-    justify-content: space-around; /* Center the icons horizontally */
 }
 
 .dark-mode {
@@ -153,7 +158,7 @@ footer {
     color: black;
 }
 
-.dark-mode .sidebar:hover .sidebar-f {
+.dark-mode .sidebar-f {
     color: black;
 }
 
@@ -168,28 +173,45 @@ footer {
 }
 
 .search-bar-container {
-    display: inline;
     padding: 10px;
-    justify-content: flex-end;
     position: fixed;
     top: 0;
-    right: 16%; /* Adjust for progress bar width */
+    left: 210px; /* Position to the right of the expanded sidebar */
+    z-index: 2;
+    background-color: #020202;
+    padding: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Media query for smaller screens - Position search bar differently */
+@media (max-width: 768px) {
+    .search-bar-container {
+        left: 10px; /* Position at the top left */
+        top: 60px;
+        width: calc(100% - 20px);
+        border-radius: 10px;
+    }
 }
 
 .search-bar {
-    width: 300px;
+    width: 100%; /* Take full width of container */
     padding: 10px;
-    border: 2px  black;
-    border-radius: 5px 0 0 5px;
+    border: none;
+    border-radius: 5px;
     outline: none;
     font-size: 16px;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
+
 .search-result {
-    background-color: #f9f9f9; /* Light background for search results */
-    border: 1px solid #ddd; /* Border around each result */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px; /* Padding inside the result */
-    margin-bottom: 10px; /* Space between results */
-    transition: box-shadow 0.3s ease; /* Smooth transition for shadow effect */
-
-
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s ease;
+    color: black; /* Text color for results */
+}
