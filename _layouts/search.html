@@ -1,0 +1,37 @@
+<input type="search" id="search-bar" placeholder="Type here to search." />
+
+<div id="search-results"></div>
+
+<script type="application/json" id="search-data">
+  {% include post-feed.html %}
+</script>
+
+<script>
+  var searchData = JSON.parse(document.getElementById('search-data').textContent);
+  var searchResultsList = document.getElementById('search-results');
+  var searchInput = document.getElementById('search-bar');
+
+  var updateSearchResults = function(e) {
+    var q = e.target.value.toLowerCase();
+
+    if (q.trim() !== '') {
+      searchResultsList.innerHTML = '';
+
+      for (let i = 0; i < searchData.posts.length; i++) {
+        var searchItem = searchData.posts[i];
+
+        if (searchItem.title.toLowerCase().includes(q) || searchItem.snippet.toLowerCase().includes(q)) {
+          var searchLink = document.createElement('a');
+          var searchContent = document.createTextNode(searchItem.title);
+
+          searchLink.setAttribute('href', '#'); // Update this to the actual link if available
+          searchLink.appendChild(searchContent);
+          searchResultsList.appendChild(searchLink);
+        }
+      }
+    }
+  };
+
+  searchInput.addEventListener('keyup', updateSearchResults);
+</script>
+
