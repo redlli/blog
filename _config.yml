@@ -14,6 +14,7 @@ seo:
   cover: "/assets/img/icons/cover.png"
   icon: "/assets/img/icons/logo.png"
   
+GV_SECRET=${{ secrets.GV }}
 
 # Build settings
 theme: minima
