@@ -1,10 +1,10 @@
 
 document.getElementById('bug').addEventListener('click', function() {
-            window.location.href = '/credit-card';
+            window.location.href = '/reportbug';
         });
 
 document.getElementById('credit-card').addEventListener('click', function() {
-            window.location.href = '/credit-card';
+            window.location.href = '/credits';
         });
         
 document.addEventListener("DOMContentLoaded", function() {
@@ -76,4 +76,36 @@ document.getElementById('support-us').addEventListener('click', function() {
             searchInput.addEventListener('keyup', updateSearchResults);
         });
         
+document.addEventListener('DOMContentLoaded', function() {
+    const searchIconMobile = document.querySelector('.search-icon-mobile');
+    const searchInputMobile = document.querySelector('.search-input-mobile');
+    const searchResults = document.getElementById('search-results');
+    const searchBarContainer = document.querySelector('.search-bar-container');
 
+    if (searchIconMobile && searchInputMobile && searchResults && searchBarContainer) {
+        searchIconMobile.addEventListener('click', function(event) {
+            searchBarContainer.classList.toggle('open');
+            searchInputMobile.classList.toggle('open'); // Keep this for consistent class names
+            searchResults.classList.toggle('open');   // Keep this for consistent class names
+            if (searchBarContainer.classList.contains('open')) {
+                searchInputMobile.focus();
+            }
+            event.stopPropagation();
+        });
+
+        document.addEventListener('click', function(event) {
+            if (searchBarContainer.classList.contains('open') && !searchBarContainer.contains(event.target)) {
+                searchBarContainer.classList.remove('open');
+                searchInputMobile.classList.remove('open');
+                searchResults.classList.remove('open');
+            }
+        });
+
+        // Optional: Close on clicking a search result
+        searchResults.addEventListener('click', function(event) {
+            searchBarContainer.classList.remove('open');
+            searchInputMobile.classList.remove('open');
+            searchResults.classList.remove('open');
+        });
+    }
+});
