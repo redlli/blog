@@ -1,16 +1,23 @@
-
-
 title: redlii
 email: redlli@redlli.com
 description: >- # this means to ignore newlines until "baseurl:"
   official page for redlii blogs and other stuff.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://blog.redlii.com/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  redlli
+
+# SEO Settings
+seo:
+  title: "JA"
+  description: "Explore the stuff in redlli way"
+  keywords: "blog, redlii blogs, redlii"
+  cover: "/assets/img/icons/cover.png"
+  icon: "/assets/img/icons/logo.png"
+  
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
+  - jekyll-sitemap
