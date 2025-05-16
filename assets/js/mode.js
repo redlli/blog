@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
        
 document.getElementById('support-us').addEventListener('click', function() {
-            window.location.href = 'https://redlii.com/support.html';
+            window.location.href = 'https://redlii.com/support';
         });
         
 
