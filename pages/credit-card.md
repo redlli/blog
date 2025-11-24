@@ -10,7 +10,6 @@ If you want to make similar website or learn how to make it do check out<a class
 
  check out <a class="linkhai" href="https://jekyllrb.com/docs/home/">Jekyll Documentation</a>
 
-i have use sound form <a class="linkhai" href="https://opengameart.org/users/kenney">OpenGameArt - Free Sounds</a> for that tik sound on meanu hover.
   
 This project theme is inspried from<a class="linkhai" href="https://github.com/cotes2020/jekyll-theme-chirpy">Chirpy Theme</a>
 
